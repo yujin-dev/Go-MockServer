@@ -14,11 +14,11 @@ func main() {
 
 	go connHanlder(conn)
 
-	_, Cerr := conn.Write([]byte("Hello"))
+	_, Cerr := conn.Write([]byte("config"))
 	if Cerr == nil {
 		log.Println("Successfully sent")
 	}
-	conn.Close()
+	defer conn.Close()
 }
 
 func connHanlder(conn net.Conn) {

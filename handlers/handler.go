@@ -77,7 +77,7 @@ func GetConfig() map[string]interface{} {
 	var info map[string]interface{}
 	byteValue, _ := ioutil.ReadAll(jsonFile)
 	mErr := json.Unmarshal([]byte(byteValue), &info)
-	if err != nil {
+	if mErr != nil {
 		panic(mErr)
 	}
 	return info

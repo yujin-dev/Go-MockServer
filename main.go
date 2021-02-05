@@ -1,10 +1,18 @@
 package main
 
 import (
+	"github.com/YJ-dev/go-server/rest"
 	"github.com/YJ-dev/go-server/socket"
 )
 
 func main() {
-	// rest.Run()
-	socket.Run()
+	runType("socket")
+}
+
+func runType(connType string) {
+	if connType == "rest" {
+		rest.Run()
+	} else {
+		socket.Run()
+	}
 }
